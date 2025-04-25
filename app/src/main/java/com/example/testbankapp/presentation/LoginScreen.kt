@@ -14,9 +14,9 @@ fun LoginScreen(
     onLoginSuccess: () -> Unit,
     viewModel: LoginViewModel = koinViewModel()
 ) {
-    var username by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
-    
+    var username by mutableStateOf("")
+    var password by mutableStateOf("")
+
     val loginState by viewModel.loginState.collectAsState()
 
     LaunchedEffect(loginState) {
