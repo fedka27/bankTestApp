@@ -11,19 +11,10 @@ import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun LoginScreen(
-    onLoginSuccess: () -> Unit,
     viewModel: LoginViewModel = koinViewModel()
 ) {
     var username by mutableStateOf("")
     var password by mutableStateOf("")
-
-    val loginState by viewModel.loginState.collectAsState()
-
-    LaunchedEffect(loginState) {
-        if (loginState is LoginState.Success) {
-            onLoginSuccess()
-        }
-    }
 
     Column(
         modifier = Modifier
@@ -33,7 +24,7 @@ fun LoginScreen(
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "Bank App Login",
+            text = "Login",
             style = MaterialTheme.typography.headlineMedium
         )
 
@@ -63,19 +54,6 @@ fun LoginScreen(
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Login")
-        }
-
-        when (loginState) {
-            is LoginState.Loading -> {
-                CircularProgressIndicator()
-            }
-            is LoginState.Error -> {
-                Text(
-                    text = (loginState as LoginState.Error).message,
-                    color = MaterialTheme.colorScheme.error
-                )
-            }
-            else -> {}
         }
     }
 } 

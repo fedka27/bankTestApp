@@ -9,17 +9,4 @@ class UserUseCase(private val userRepository: UserRepository) {
         val result = userRepository.login(username, password)
         emit(result)
     }
-
-    suspend fun getBalance(): Flow<Double> = flow {
-        val balance = userRepository.getBalance()
-        emit(balance)
-    }
-
-    fun isLoggedIn(): Boolean {
-        return userRepository.isLoggedIn()
-    }
-
-    fun logout() {
-        userRepository.logout()
-    }
 } 

@@ -1,5 +1,8 @@
 package com.example.testbankapp.presentation
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.testbankapp.data.UserRepository
@@ -11,15 +14,15 @@ class LoginViewModel(
     private val userRepository: UserRepository
 ) : ViewModel() {
 
-    private val _loginState = MutableStateFlow<LoginState>(LoginState.Initial)
-    val loginState: StateFlow<LoginState> = _loginState
+    var loginState by mutableStateOf<LoginState>(LoginState.Initial)
+        private set
 
     fun login(username: String, password: String) {
         viewModelScope.launch {
-            _loginState.value = LoginState.Loading
+            loginState = LoginState.Loading
             try {
                 val result = userRepository.login(username, password)
-                _loginState.value = if (result) {
+                loginState = if (result) {
                     LoginState.Success
                 } else {
                     LoginState.Error("Invalid credentials")
@@ -43,5 +46,5 @@ sealed class LoginState {
     object Initial : LoginState()
     object Loading : LoginState()
     object Success : LoginState()
-    data class Error(val message: String) : LoginState()
+    class Error(val message: String) : LoginState()
 } 

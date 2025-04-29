@@ -18,18 +18,4 @@ class UserRepository(private val context: Context) {
             false
         }
     }
-
-    suspend fun getBalance(): Double = withContext(Dispatchers.IO) {
-        // Simulate network delay
-        Thread.sleep(500)
-        1000.0
-    }
-
-    fun isLoggedIn(): Boolean {
-        return sharedPreferences.contains("username")
-    }
-
-    fun logout() {
-        sharedPreferences.edit().clear().apply()
-    }
 } 
