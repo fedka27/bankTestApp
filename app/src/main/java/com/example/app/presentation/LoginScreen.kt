@@ -10,9 +10,9 @@ import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun LoginScreen(
-    viewModel: LoginViewModel = koinViewModel()
-) {
+fun LoginScreen() {
+    val viewModel: LoginViewModel = koinViewModel()
+
     var username by mutableStateOf("")
     var password by mutableStateOf("")
 
@@ -23,10 +23,7 @@ fun LoginScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(
-            text = "Login",
-            style = MaterialTheme.typography.headlineMedium
-        )
+        Text(text = "Login",)
 
         Spacer(modifier = Modifier.height(32.dp))
 
@@ -50,8 +47,8 @@ fun LoginScreen(
         Spacer(modifier = Modifier.height(32.dp))
 
         Button(
-            onClick = { viewModel.login(username, password) },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            onClick = { /* TODO handle click */ },
         ) {
             Text("Login")
         }

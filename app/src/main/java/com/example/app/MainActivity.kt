@@ -36,13 +36,7 @@ fun AppNavigation() {
 
     NavHost(navController = navController, startDestination = "login") {
         composable("login") {
-            LoginScreen(
-                onLoginSuccess = {
-                    navController.navigate("dashboard") {
-                        popUpTo("login") { inclusive = true }
-                    }
-                }
-            )
+            LoginScreen()
         }
         composable("dashboard") {
             // TODO: Implement dashboard screen
