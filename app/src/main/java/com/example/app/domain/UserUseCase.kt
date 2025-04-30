@@ -1,6 +1,6 @@
-package com.example.testbankapp.domain
+package com.example.app.domain
 
-import com.example.testbankapp.data.UserRepository
+import com.example.app.data.UserRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

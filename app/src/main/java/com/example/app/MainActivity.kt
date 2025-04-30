@@ -1,4 +1,4 @@
-package com.example.testbankapp
+package com.example.app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,8 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.testbankapp.presentation.LoginScreen
-import com.example.testbankapp.ui.theme.TestBankAppTheme
+import com.example.app.presentation.LoginScreen
+import com.example.app.ui.theme.TestBankAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

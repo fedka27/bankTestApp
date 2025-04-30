@@ -1,8 +1,8 @@
-package com.example.testbankapp.di
+package com.example.app.di
 
-import com.example.testbankapp.data.UserRepository
-import com.example.testbankapp.domain.UserUseCase
-import com.example.testbankapp.presentation.LoginViewModel
+import com.example.app.data.UserRepository
+import com.example.app.domain.UserUseCase
+import com.example.app.presentation.LoginViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module

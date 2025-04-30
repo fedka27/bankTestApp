@@ -1,13 +1,11 @@
-package com.example.testbankapp.presentation
+package com.example.app.presentation
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.testbankapp.data.UserRepository
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
+import com.example.app.data.UserRepository
 import kotlinx.coroutines.launch
 
 class LoginViewModel(

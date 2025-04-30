@@ -1,7 +1,7 @@
-package com.example.testbankapp
+package com.example.app
 
 import android.app.Application
-import com.example.testbankapp.di.appModule
+import com.example.app.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

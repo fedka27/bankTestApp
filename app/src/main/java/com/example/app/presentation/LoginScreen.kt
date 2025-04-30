@@ -1,4 +1,4 @@
-package com.example.testbankapp.presentation
+package com.example.app.presentation
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*

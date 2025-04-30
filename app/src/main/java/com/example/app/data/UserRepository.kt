@@ -1,4 +1,4 @@
-package com.example.testbankapp.data
+package com.example.app.data
 
 import android.content.Context
 import android.content.SharedPreferences
